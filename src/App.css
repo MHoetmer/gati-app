@@ -37,7 +37,7 @@
   cursor: url("./logos/Plane.svg");
   margin: -20px;
   padding: 20px;
-  padding-bottom: 190px;
+  padding-bottom: 990px;
   font-family: "Fedra Mono";
   background-color: #b7dbd0;
 }
@@ -46,7 +46,7 @@
   cursor: url("./logos/Plane.svg");
   margin: -20px;
   padding: 20px;
-  padding-bottom: 190px;
+  padding-bottom: 990px;
   font-family: "Tiempos Headline";
   background-color: black;
 }
@@ -55,7 +55,7 @@
   cursor: url("./logos/Logo1.png");
   margin: -20px;
   padding: 20px;
-  padding-bottom: 190px;
+  padding-bottom: 990px;
 
   font-family: "Clearface Std";
   background-color: #2465f6;
@@ -284,4 +284,18 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.UploadInput {
+  width: 200px;
+  font-family: "AntiqueOlive";
+  box-sizing: border-box;
+  color: black;
+  border: 2px solid white;
+  border-radius: 4px;
+  background-color: rgba(250, 250, 250, 0.4);
+}
+
+.UploadButton1 {
+  font-family: "AntiqueOlive";
 }

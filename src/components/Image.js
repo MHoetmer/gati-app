@@ -37,6 +37,17 @@ class Image extends React.Component {
       .then(data => {
         this.setState({ data: data.data });
       });
+
+    fetch(`http://localhost:8000/api/album/japan`, {
+      mode: "cors",
+      method: "GET"
+    })
+      .then(resp => {
+        return resp.json();
+      })
+      .then(data => {
+        console.log("Albumdata", data);
+      });
   }
 
   render() {

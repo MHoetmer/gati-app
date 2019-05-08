@@ -14,7 +14,6 @@ class Logos extends React.Component {
     return (
       <div>
         <header className={"LogoPage"}>
-          Logos
           <div className={"LogoImages"}>
             <img src="/logos/Logo1.png" className={"LogoImg"} />
             <img src="/logos/Logo2.png" className={"LogoImg"} />

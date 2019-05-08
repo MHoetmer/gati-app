@@ -50,7 +50,6 @@ class Home2 extends React.Component {
 
     return (
       <header className={"ImageContainer"}>
-        <a className={"ImageTitle1"}>Home</a>
         <Grid container className={"HomeContainer"}>
           <Grid container className={"HomeRow"}>
             {rendered}

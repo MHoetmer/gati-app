@@ -3,6 +3,7 @@ import Image from "./../components/Image";
 import Home1 from "./../components/Home1";
 import Fonts from "./../components/Fonts";
 import Logos from "./../components/Logos";
+import Upload1 from "./../components/Upload1";
 import "./../App.css";
 import { connect } from "react-redux";
 import { changeStyle1, changeStyle3 } from "./../actions/actions";
@@ -57,6 +58,9 @@ class MenuBar1 extends React.Component {
             <Link to="/fonts " className={"NavigationBar3"}>
               Fonts
             </Link>
+            <Link to="/upload" className={"NavigationBar3"}>
+              Upload
+            </Link>
             <a to="/" className={"Gatiway3"}>
               Gatiway
             </a>
@@ -83,6 +87,7 @@ class MenuBar1 extends React.Component {
           <Route path="/" exact component={Home1} />
           <Route path="/fonts" component={Fonts} />
           <Route path="/logos" component={Logos} />
+          <Route path="/upload" component={Upload1} />
           <Route path="/image/:id" component={Image} />
         </div>
       </Router>

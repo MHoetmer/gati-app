@@ -3,6 +3,7 @@ import Image from "./../components/Image";
 import Home from "./../components/Home";
 import Fonts from "./../components/Fonts";
 import Logos from "./../components/Logos";
+import Upload1 from "./../components/Upload1";
 import "./../App.css";
 import { connect } from "react-redux";
 import { changeStyle1, changeStyle3 } from "./../actions/actions";
@@ -16,7 +17,7 @@ class MenuBar1 extends React.Component {
     super(props);
     this.state = {
       images: [1, 2],
-      albums: ["Home", "Japan", "Georgie"],
+      albums: ["Home", "Japan", "Georgië"],
       thumbnails: ["useless", "/photos/georgie/1.jpg", "/photos/japan/1.jpg"]
     };
   }
@@ -58,6 +59,9 @@ class MenuBar1 extends React.Component {
             <Link to="/fonts " className={"NavigationBar2"}>
               Fonts
             </Link>
+            <Link to="/upload" className={"NavigationBar2"}>
+              Upload
+            </Link>
             <a to="/" className={"Gatiway2"}>
               Gatiway
             </a>
@@ -84,6 +88,7 @@ class MenuBar1 extends React.Component {
           <Route path="/" exact component={Home2} />
           <Route path="/fonts" component={Fonts} />
           <Route path="/logos" component={Logos} />
+          <Route path="/upload" component={Upload1} />
           <Route path="/image/:id" component={Image} />
         </div>
       </Router>

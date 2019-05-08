@@ -48,7 +48,6 @@ class Home extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <titlef>Home</titlef>
           {this.state.data.length > 0
             ? this.state.data.map((key, img) => {
                 let index = img;
