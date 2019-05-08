@@ -1,0 +1,1 @@
+export const CHANGE_STYLE1 = "CHANGE_STYLE1";

@@ -1,0 +1,163 @@
+@font-face {
+  font-family: "Fedra Mono";
+  font-style: normal;
+  src: url("./fonts/fedra-mono/FedraMonoBold.otf"); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: "AntiqueOlive";
+  src: url("./fonts/antique-olive/AQL.ttf"); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url("./fonts/tiempos-headline/TiemposHeadline-Bold.otf"); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("./fonts/gotham/Gotham-Light.otf"); /* IE9 Compat Modes */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Fedra Mono";
+  color: white;
+  link-color: white;
+  background-color: black;
+}
+
+.Image {
+  height: 60vmin;
+  pointer-events: none;
+}
+
+.NavigationBar1,
+.NavigationBar2 {
+  margin-left: 10%;
+  margin: 0px;
+  padding-right: 50px;
+  font-family: "Fedra Mono";
+  color: #ffffc8;
+  link-color: white;
+  text-decoration: none;
+}
+
+.NavigationBar2 {
+  color: #ffffc8;
+  font-family: "Tiempos Headline";
+}
+
+.NavigationBar1:hover {
+  color: #ffffc8;
+  text-decoration: underline;
+}
+
+.NavigationBar2:hover {
+  color: #dcdddd;
+  text-decoration: underline;
+}
+
+.NavigationBar1:focus,
+.NavigationBar2:focus {
+  text-decoration: underline;
+}
+
+.Gatiway2,
+.Gatiway1 {
+  margin-left: 65%;
+}
+
+.Gatiway2 {
+  font-family: "Tiempos Headline";
+}
+
+.ImageLink1,
+.ImageLink2 {
+  padding-right: 50px;
+  font-family: "Fedra Mono";
+  color: #e1e1ff;
+  link-color: #e1e1ff;
+  text-decoration: none;
+}
+
+.ImageLink2 {
+  padding-right: 0px;
+  margin-left: -550px;
+  font-family: "Gotham";
+  color: #e19193;
+}
+
+.ImageLink2:focus,
+.ImageLink1:focus {
+  color: #e1ffd3;
+  text-decoration: underline;
+}
+
+.ImageContainer {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.HomeRow {
+  display: table;
+}
+
+.HomeColumn {
+  margin-left: 10%;
+  float: left;
+  width: 25%;
+}
+
+.HomeImg {
+  width: 40%;
+}
+
+.ImageTitle1,
+.ImageTitle2 {
+  color: #caffd8;
+  margin-top: 20px;
+  font-family: "Fedra Mono";
+}
+
+.ImageTitle2 {
+  font-family: "Tiempos Headline";
+  color: #caffd8;
+}
+
+.ImageComment1 {
+  font-size: 70%;
+  font-family: "AntiqueOlive";
+}
+
+.ImageComment2 {
+  font-size: 70%;
+  font-family: "Gotham";
+}
+
+.Thumbnail {
+  width: 5%;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.ThumbnailRow {
+}
+
+.MenuBarRow1 {
+  width: 300px;
+}
+
+.MenuBarColumn1 {
+  width: 300px;
+}
+
+.MenuBarContainer1 {
+  width: 2000px;
+}
