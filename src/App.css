@@ -28,10 +28,13 @@
   font-family: "Clearface Std";
   src: url("./fonts/clearface-std/ClearfaceStd-Black.otf"); /* IE9 Compat Modes */
 }
-.Root1 {
-  background-color: #b7dbd0;
+
+.Cursor {
+  cursor: url("./logos/Plane.svg");
 }
+
 .Body1 {
+  cursor: url("./logos/Plane.svg");
   margin: -20px;
   padding: 20px;
   padding-bottom: 190px;
@@ -40,6 +43,7 @@
 }
 
 .Body2 {
+  cursor: url("./logos/Plane.svg");
   margin: -20px;
   padding: 20px;
   padding-bottom: 190px;
@@ -48,6 +52,7 @@
 }
 
 .Body3 {
+  cursor: url("./logos/Logo1.png");
   margin: -20px;
   padding: 20px;
   padding-bottom: 190px;
@@ -174,13 +179,26 @@
   color: white;
 }
 
+.TextContainer {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: calc(10px + 2vmin);
+}
+
+.custom-cur {
+  cursor: url("/logos/Logo1.png");
+}
+
 .HomeRow {
   display: table;
 }
 
 .HomeColumn {
-  margin-left: 10%;
-  float: left;
+  margin-left: 1%;
   width: 25%;
 }
 
@@ -188,9 +206,16 @@
   width: 40%;
 }
 
+.HomeContainer {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .ImageTitle1,
 .ImageTitle2,
 .ImageTitle3 {
+  text-align: center;
   color: #caffd8;
   margin-top: 20px;
 }

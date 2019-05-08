@@ -11,7 +11,22 @@ class Image extends React.Component {
       style2: false
     };
   }
-  componentDidMount() {
+  componentWillUpdate(prevProps) {
+    if (prevProps.match.params.id != this.props.match.params.id) {
+      this.setState({ id: this.props.match.params.id });
+      fetch(`http://localhost:8000/api/image/${this.props.match.params.id}`, {
+        mode: "cors",
+        method: "GET"
+      })
+        .then(resp => {
+          return resp.json();
+        })
+        .then(data => {
+          this.setState({ data: data.data });
+        });
+    }
+  }
+  componentWillMount() {
     fetch(`http://localhost:8000/api/image/${this.state.id}`, {
       mode: "cors",
       method: "GET"
@@ -21,7 +36,6 @@ class Image extends React.Component {
       })
       .then(data => {
         this.setState({ data: data.data });
-        console.log("muu", data.data);
       });
   }
 

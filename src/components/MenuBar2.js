@@ -7,6 +7,7 @@ import "./../App.css";
 import { connect } from "react-redux";
 import { changeStyle1, changeStyle3 } from "./../actions/actions";
 import Grid from "@material-ui/core/Grid";
+import Home2 from "./../components/Home2";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -80,7 +81,7 @@ class MenuBar1 extends React.Component {
             </Grid>
           </Grid>
 
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact component={Home2} />
           <Route path="/fonts" component={Fonts} />
           <Route path="/logos" component={Logos} />
           <Route path="/image/:id" component={Image} />

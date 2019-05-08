@@ -11,7 +11,18 @@ class Fonts extends React.Component {
 
   render() {
     const style1 = this.props.style1;
-    return <div>Fonts</div>;
+    return (
+      <div className={"TextContainer"}>
+        <a style={{ fontFamily: "Fedra Mono" }}>Fedra Mono</a>
+        <a style={{ fontFamily: "Antique Olive" }}>Antique Olive</a>
+        <br />
+        <a style={{ fontFamily: "Tiempos Headline" }}>Tiempos Headline</a>
+        <a style={{ fontFamily: "Gotham" }}>Gotham</a>
+        <br />
+        <a style={{ fontFamily: "Clearface Std" }}>Clearface Std</a>
+        <a style={{ fontFamily: "Apercu" }}>Apercu</a>
+      </div>
+    );
   }
 }
 const mapStateToProps = state => ({

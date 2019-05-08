@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "./../components/Image";
-import Home from "./../components/Home";
+import Home1 from "./../components/Home1";
 import Fonts from "./../components/Fonts";
 import Logos from "./../components/Logos";
 import "./../App.css";
@@ -80,7 +80,7 @@ class MenuBar1 extends React.Component {
             </Grid>
           </Grid>
 
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact component={Home1} />
           <Route path="/fonts" component={Fonts} />
           <Route path="/logos" component={Logos} />
           <Route path="/image/:id" component={Image} />
