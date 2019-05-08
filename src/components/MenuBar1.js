@@ -1,9 +1,11 @@
 import React from "react";
 import Image from "./../components/Image";
 import Home from "./../components/Home";
+import Fonts from "./../components/Fonts";
+import Logos from "./../components/Logos";
 import "./../App.css";
 import { connect } from "react-redux";
-import { changeStyle1 } from "./../actions/actions";
+import { changeStyle1, changeStyle3 } from "./../actions/actions";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -19,23 +21,39 @@ class MenuBar1 extends React.Component {
 
   changeStyleOne = () => {
     this.props.changeStyle1(true);
+    this.props.changeStyle3(false);
   };
 
-  changeStyle2 = () => {
+  changeStyleTwo = () => {
+    this.props.changeStyle1(false);
+    this.props.changeStyle3(false);
+  };
+
+  changeStyleThree = () => {
+    this.props.changeStyle3(true);
     this.props.changeStyle1(false);
   };
 
   render() {
     return (
       <Router>
-        <div>
+        <div className={"Body1"}>
           <ul>
             <Link className={"NavigationBar1"} onClick={this.changeStyleOne}>
               Layout 1
             </Link>
 
-            <Link className={"NavigationBar1"} onClick={this.changeStyle2}>
+            <Link className={"NavigationBar1"} onClick={this.changeStyleTwo}>
               Layout 2
+            </Link>
+            <Link className={"NavigationBar1"} onClick={this.changeStyleThree}>
+              Layout 3
+            </Link>
+            <Link to="/logos" className={"NavigationBar1"}>
+              Logo's
+            </Link>
+            <Link to="/logos" className={"NavigationBar1"}>
+              Fonts
             </Link>
             <a to="/" className={"Gatiway1"}>
               Gatiway
@@ -56,6 +74,8 @@ class MenuBar1 extends React.Component {
             <br />
           </ul>
           <Route path="/" exact component={Home} />
+          <Route path="/fonts" component={Fonts} />
+          <Route path="/logos" component={Logos} />
           <Route path="/image/:id" component={Image} />
         </div>
       </Router>
@@ -69,5 +89,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { changeStyle1 }
+  { changeStyle1, changeStyle3 }
 )(MenuBar1);

@@ -27,10 +27,15 @@ class Image extends React.Component {
 
   render() {
     const style1 = this.props.style1;
+    const style3 = this.props.style3;
     return (
       <div>
         <header className="ImageContainer">
-          <a className={style1 ? "ImageTitle1" : "ImageTitle2"}>
+          <a
+            className={
+              style1 ? "ImageTitle1" : style3 ? "ImageTitle3" : "ImageTitle2"
+            }
+          >
             {this.state.data.Album}
           </a>
 
@@ -40,11 +45,23 @@ class Image extends React.Component {
             alt="img"
           />
 
-          <a className={style1 ? "ImageTitle1" : "ImageTitle2"}>
+          <a
+            className={
+              style1 ? "ImageTitle1" : style3 ? "ImageTitle3" : "ImageTitle2"
+            }
+          >
             {this.state.data.Name}
           </a>
 
-          <a className={style1 ? "ImageComment1" : "ImageComment2"}>
+          <a
+            className={
+              style1
+                ? "ImageComment1"
+                : style3
+                ? "ImageComment3"
+                : "ImageComment2"
+            }
+          >
             {this.state.data.Note}
           </a>
         </header>
@@ -53,7 +70,8 @@ class Image extends React.Component {
   }
 }
 const mapStateToProps = state => ({
-  style1: state.style1
+  style1: state.style1,
+  style3: state.style3
 });
 
 export default connect(mapStateToProps)(Image);

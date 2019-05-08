@@ -1,6 +1,7 @@
 import React from "react";
 import MenuBar1 from "./components/MenuBar1";
 import MenuBar2 from "./components/MenuBar2";
+import MenuBar3 from "./components/MenuBar3";
 import Home from "./components/Home";
 import "./App.css";
 import { connect } from "react-redux";
@@ -15,12 +16,14 @@ class App extends React.Component {
 
   render() {
     const style1 = this.props.style1;
-    return style1 ? <MenuBar1 /> : <MenuBar2 />;
+    const style3 = this.props.style3;
+    return style1 ? <MenuBar1 /> : style3 ? <MenuBar3 /> : <MenuBar2 />;
   }
 }
 
 const mapStateToProps = state => ({
-  style1: state.style1
+  style1: state.style1,
+  style3: state.style3
 });
 
 export default connect(

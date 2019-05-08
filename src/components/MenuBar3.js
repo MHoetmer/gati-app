@@ -38,26 +38,26 @@ class MenuBar1 extends React.Component {
   render() {
     return (
       <Router>
-        <div className={"Body2"}>
+        <div className={"Body3"}>
           <ul>
-            <Link className={"NavigationBar2"} onClick={this.changeStyleOne}>
+            <Link className={"NavigationBar3"} onClick={this.changeStyleOne}>
               Layout 1
             </Link>
 
-            <Link className={"NavigationBar2"} onClick={this.changeStyleTwo}>
+            <Link className={"NavigationBar3"} onClick={this.changeStyleTwo}>
               Layout 2
             </Link>
 
-            <Link className={"NavigationBar2"} onClick={this.changeStyleThree}>
+            <Link className={"NavigationBar3"} onClick={this.changeStyleThree}>
               Layout 3
             </Link>
-            <Link to="/logos" className={"NavigationBar2"}>
+            <Link to="/logos" className={"NavigationBar3"}>
               Logo's
             </Link>
-            <Link to="/fonts " className={"NavigationBar2"}>
+            <Link to="/fonts " className={"NavigationBar3"}>
               Fonts
             </Link>
-            <a to="/" className={"Gatiway2"}>
+            <a to="/" className={"Gatiway3"}>
               Gatiway
             </a>
           </ul>
@@ -66,7 +66,7 @@ class MenuBar1 extends React.Component {
             <Grid container justify="center">
               {this.state.images.map(i => {
                 return (
-                  <Link to={`/image/${i}`} className={"ImageLink2"}>
+                  <Link to={`/image/${i}`} className={"ImageLink3"}>
                     <Grid key={i} item>
                       <a>{this.state.albums[i]}</a>
                     </Grid>
@@ -91,7 +91,8 @@ class MenuBar1 extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  style1: state.style1
+  style1: state.style1,
+  style3: state.style3
 });
 
 export default connect(

@@ -1,4 +1,4 @@
-import { CHANGE_STYLE1 } from "../actions/actionTypes";
+import { CHANGE_STYLE1, CHANGE_STYLE3 } from "../actions/actionTypes";
 
 const initialState = {
   style1: false
@@ -12,6 +12,13 @@ const changeStyle1 = (state = initialState, action) => {
       return {
         ...state,
         style1: style1
+      };
+    case CHANGE_STYLE3:
+      const { style3 } = action.payload;
+
+      return {
+        ...state,
+        style3: style3
       };
     case "TOGGLE_TODO":
       return state.map(todo =>

@@ -10,9 +10,11 @@ import changeStyle1 from "./reducers/style1";
 const store = createStore(changeStyle1);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <div>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </div>,
   document.getElementById("root")
 );
 
