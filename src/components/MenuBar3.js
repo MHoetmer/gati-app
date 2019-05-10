@@ -3,7 +3,8 @@ import Image from "./../components/Image";
 import Home1 from "./../components/Home1";
 import Fonts from "./../components/Fonts";
 import Logos from "./../components/Logos";
-import Upload1 from "./../components/Upload1";
+import UploadU from "./../components/UploadU";
+import Album from "./../components/Album";
 import "./../App.css";
 import { connect } from "react-redux";
 import { changeStyle1, changeStyle3 } from "./../actions/actions";
@@ -92,7 +93,7 @@ class MenuBar1 extends React.Component {
               this.state.thumbnails.map((v, k) => {
                 return (
                   <Grid key={1} item md={1}>
-                    <Link to={`/image/${k}`}>
+                    <Link to={`/album/${v.Album}`}>
                       <Grid key={1} item md={1} className={"ImageLink3"}>
                         <a>{v.Album}</a>
                       </Grid>
@@ -116,8 +117,12 @@ class MenuBar1 extends React.Component {
           <Route path="/" exact component={Home1} />
           <Route path="/fonts" component={Fonts} />
           <Route path="/logos" component={Logos} />
-          <Route path="/upload" component={Upload1} />
+          <Route
+            path="/upload"
+            render={props => <UploadU {...props} layout={3} />}
+          />
           <Route path="/image/:id" component={Image} />
+          <Route path="/album/:name" component={Album} />
         </div>
       </Router>
     );

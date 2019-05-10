@@ -4,7 +4,7 @@ import Home1 from "./../components/Home1";
 import Fonts from "./../components/Fonts";
 import Logos from "./../components/Logos";
 import Album from "./../components/Album";
-import Upload1 from "./../components/Upload1";
+import UploadU from "./../components/UploadU";
 import "./../App.css";
 import { connect } from "react-redux";
 import { changeStyle1, changeStyle3 } from "./../actions/actions";
@@ -90,13 +90,14 @@ class MenuBar1 extends React.Component {
                 Home
               </Link>
               {this.state.albums.length > 0
-                ? this.state.albums.map(i => {
+                ? this.state.albums.map((v, k) => {
                     return (
                       <Link
-                        to={`/album/${this.state.albums[i]}`}
+                        to={`/album/${v}`}
                         className={"ImageLink1"}
+                        onClick={this.saveAlbum}
                       >
-                        {this.state.albums[i]}
+                        {v}
                       </Link>
                     );
                   })
@@ -107,7 +108,10 @@ class MenuBar1 extends React.Component {
           <Route path="/" exact component={Home1} />
           <Route path="/fonts" component={Fonts} />
           <Route path="/logos" component={Logos} />
-          <Route path="/upload" component={Upload1} />
+          <Route
+            path="/upload"
+            render={props => <UploadU {...props} layout={1} />}
+          />
           <Route path="/album/:name" component={Album} />
           <Route path="/image/:id" component={Image} />
         </div>

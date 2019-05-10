@@ -1,4 +1,9 @@
-import { CHANGE_STYLE1, CHANGE_STYLE3 } from "../actions/actionTypes";
+import {
+  CHANGE_STYLE1,
+  CHANGE_STYLE3,
+  SAVE_ALBUM,
+  CURRENT_INDEX
+} from "../actions/actionTypes";
 
 const initialState = {
   style1: false
@@ -19,6 +24,20 @@ const changeStyle1 = (state = initialState, action) => {
       return {
         ...state,
         style3: style3
+      };
+    case SAVE_ALBUM:
+      const { album } = action.payload;
+
+      return {
+        ...state,
+        album: album
+      };
+    case CURRENT_INDEX:
+      const { index } = action.payload;
+
+      return {
+        ...state,
+        index: index
       };
     case "TOGGLE_TODO":
       return state.map(todo =>

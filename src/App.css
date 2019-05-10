@@ -69,11 +69,6 @@
   background-color: white;
 }
 
-.Image {
-  height: 60vmin;
-  pointer-events: none;
-}
-
 .NavigationBar1,
 .NavigationBar2,
 .NavigationBar3 {
@@ -178,6 +173,31 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.ImageColLeft {
+  padding-left: 70%;
+  font-size: 520%;
+  text-decoration: none;
+}
+
+.ImageColRight {
+  padding-right: 50%;
+  font-size: 520%;
+}
+
+.ImageTextCol {
+  text-decoration: none;
+  color: white;
+}
+
+.Image {
+  height: 60vmin;
+}
+
+.ImageCol {
+  align-items: center;
+  justify-content: center;
 }
 
 .TextContainer {

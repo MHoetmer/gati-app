@@ -1,7 +1,9 @@
 import React from "react";
 import "./../App.css";
 import Grid from "@material-ui/core/Grid";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { saveAlbum } from "./../actions/actions";
 
 class Album extends React.Component {
   constructor(props) {
@@ -12,6 +14,19 @@ class Album extends React.Component {
     };
   }
   componentDidMount() {
+    this.fetchAlbum();
+    {
+      console.log(this.props.album);
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.name != this.props.match.params.name) {
+      this.fetchAlbum();
+    }
+  }
+
+  fetchAlbum() {
     fetch(`http://localhost:8000/api/album/${this.props.match.params.name}`, {
       mode: "cors",
       method: "GET"
@@ -21,6 +36,7 @@ class Album extends React.Component {
       })
       .then(data => {
         this.setState({ images: data.data });
+        this.props.saveAlbum(data.data);
       });
   }
 
@@ -30,9 +46,9 @@ class Album extends React.Component {
       this.state.images.map((k, img) => {
         rendered.push(
           <Grid key={k} item sm={3} className={"HomeColumn"}>
-            <Link to={`/image/${img + 1}`}>
+            <Link to={`/image/${k.Uid}`}>
               <img
-                src={process.env.PUBLIC_URL + this.state.images[img].Path}
+                src={process.env.PUBLIC_URL + k.Path}
                 className={"HomeImg"}
                 alt="img"
               />
@@ -53,5 +69,11 @@ class Album extends React.Component {
     );
   }
 }
+const mapStateToProps = state => ({
+  album: state.album
+});
 
-export default Album;
+export default connect(
+  mapStateToProps,
+  { saveAlbum }
+)(Album);

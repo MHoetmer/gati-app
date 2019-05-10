@@ -12,7 +12,7 @@ class Home2 extends React.Component {
   }
   componentDidMount() {
     let images = [];
-    for (let i = 1; i < 10; i++) {
+    for (let i = 3; i < 15; i++) {
       fetch(`http://localhost:8000/api/image/${i}`, {
         mode: "cors",
         method: "GET"
@@ -36,7 +36,7 @@ class Home2 extends React.Component {
       this.state.images.map((k, img) => {
         rendered.push(
           <Grid key={k} item sm={3} className={"HomeColumn"}>
-            <Link to={`/image/${img + 1}`}>
+            <Link to={`/image/${k.Uid}`}>
               <img
                 src={process.env.PUBLIC_URL + this.state.images[img].Path}
                 className={"HomeImg"}
