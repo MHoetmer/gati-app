@@ -15,10 +15,19 @@ class MenuBar1 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: [1, 2],
-      albums: ["Home", "Japan", "Georgie"],
-      thumbnails: ["useless", "/photos/georgie/1.jpg", "/photos/japan/1.jpg"]
+      thumbnails: []
     };
+  }
+
+  componentDidMount() {
+    fetch(`http://localhost:8000/api/thumbnails`, {
+      mode: "cors",
+      method: "GET"
+    })
+      .then(resp => {
+        return resp.json();
+      })
+      .then(data => this.setState({ thumbnails: data.data }));
   }
 
   changeStyleOne = () => {
@@ -40,48 +49,68 @@ class MenuBar1 extends React.Component {
     return (
       <Router>
         <div className={"Body3"}>
-          <ul>
-            <Link className={"NavigationBar3"} onClick={this.changeStyleOne}>
-              Layout 1
-            </Link>
+          <Grid container className={"LeftMenuContainer3"}>
+            <Grid item md={8} className={"LeftMenu3"}>
+              <Link className={"NavigationBar3"} onClick={this.changeStyleOne}>
+                Layout 1
+              </Link>
 
-            <Link className={"NavigationBar3"} onClick={this.changeStyleTwo}>
-              Layout 2
-            </Link>
+              <Link className={"NavigationBar3"} onClick={this.changeStyleTwo}>
+                Layout 2
+              </Link>
 
-            <Link className={"NavigationBar3"} onClick={this.changeStyleThree}>
-              Layout 3
-            </Link>
-            <Link to="/logos" className={"NavigationBar3"}>
-              Logo's
-            </Link>
-            <Link to="/fonts " className={"NavigationBar3"}>
-              Fonts
-            </Link>
-            <Link to="/upload" className={"NavigationBar3"}>
-              Upload
-            </Link>
-            <a to="/" className={"Gatiway3"}>
-              Gatiway
-            </a>
-          </ul>
+              <Link
+                className={"NavigationBar3"}
+                onClick={this.changeStyleThree}
+              >
+                Layout 3
+              </Link>
 
-          <Grid item>
-            <Grid container justify="center">
-              {this.state.images.map(i => {
-                return (
-                  <Link to={`/image/${i}`} className={"ImageLink3"}>
-                    <Grid key={i} item>
-                      <a>{this.state.albums[i]}</a>
-                    </Grid>
-                    <img
-                      src={process.env.PUBLIC_URL + this.state.thumbnails[i]}
-                      className="Thumbnail"
-                    />
-                  </Link>
-                );
-              })}
+              <Link to="/logos" className={"NavigationBar3"}>
+                Logo's
+              </Link>
+
+              <Link to="/fonts " className={"NavigationBar3"}>
+                Fonts
+              </Link>
+
+              <Link to="/upload" className={"NavigationBar3"}>
+                Upload
+              </Link>
             </Grid>
+            <Grid item md={3} />
+            <Grid item md={1}>
+              <a to="/" className={"Gatiway3"}>
+                Gatiway
+              </a>
+            </Grid>
+          </Grid>
+          <br />
+
+          <Grid container>
+            {this.state.thumbnails.length > 0 ? (
+              this.state.thumbnails.map((v, k) => {
+                return (
+                  <Grid key={1} item md={1}>
+                    <Link to={`/image/${k}`}>
+                      <Grid key={1} item md={1} className={"ImageLink3"}>
+                        <a>{v.Album}</a>
+                      </Grid>
+
+                      <Grid key={2} item md={1}>
+                        <img
+                          src={process.env.PUBLIC_URL + v.Path}
+                          className={"Thumbnail3"}
+                        />
+                      </Grid>
+                    </Link>
+                    <br />
+                  </Grid>
+                );
+              })
+            ) : (
+              <a>Loading..</a>
+            )}
           </Grid>
 
           <Route path="/" exact component={Home1} />

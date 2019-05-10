@@ -1,30 +1,27 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
 import "./../App.css";
+import Grid from "@material-ui/core/Grid";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class Home1 extends React.Component {
+class Album extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: []
+      images: [],
+      album: this.props.match.params.name
     };
   }
   componentDidMount() {
-    let images = [];
-    for (let i = 1; i < 10; i++) {
-      fetch(`http://localhost:8000/api/image/${i}`, {
-        mode: "cors",
-        method: "GET"
+    fetch(`http://localhost:8000/api/album/${this.props.match.params.name}`, {
+      mode: "cors",
+      method: "GET"
+    })
+      .then(resp => {
+        return resp.json();
       })
-        .then(resp => {
-          return resp.json();
-        })
-        .then(data => {
-          images.push(data.data);
-        });
-    }
-    this.setState({ images: images });
+      .then(data => {
+        this.setState({ images: data.data });
+      });
   }
 
   render() {
@@ -57,4 +54,4 @@ class Home1 extends React.Component {
   }
 }
 
-export default Home1;
+export default Album;

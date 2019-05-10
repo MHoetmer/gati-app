@@ -34,7 +34,6 @@
 }
 
 .Body1 {
-  cursor: url("./logos/Plane.svg");
   margin: -20px;
   padding: 20px;
   padding-bottom: 990px;
@@ -115,7 +114,6 @@
   text-decoration: underline;
 }
 
-.Gatiway2,
 .Gatiway1,
 .Gatiway3 {
   margin-left: 65%;
@@ -125,7 +123,9 @@
   color: #ffffc8;
   font-size: 30px;
   font-family: "Tiempos Headline";
+  align-items: center;
 }
+
 .Gatiway3 {
   font-family: "Clearface Std";
 }
@@ -133,18 +133,20 @@
 .ImageLink1,
 .ImageLink2,
 .ImageLink3 {
-  padding-right: 50px;
   font-family: "Fedra Mono";
   color: white;
   link-color: white;
   text-decoration: none;
 }
 
+.ImageLink1 {
+  padding: 10px;
+}
+
 .ImageLink2 {
-  padding-right: 0px;
-  margin-left: -550px;
   font-family: "Gotham";
   color: #e19193;
+  text-decoration: none;
 }
 
 .ImageLink3 {
@@ -161,7 +163,6 @@
 
 .ImageLink2:focus {
   color: #e1ffd3;
-  text-decoration: underline;
 }
 
 .ImageLink3:focus {
@@ -246,12 +247,15 @@
 }
 
 .Thumbnail {
-  width: 5%;
+  width: 25%;
   margin-top: 10px;
   margin-left: 10px;
 }
 
-.ThumbnailRow {
+.Thumbnail3 {
+  width: 600%;
+  margin-top: 4px;
+  margin-left: 4px;
 }
 
 .MenuBarRow1 {
@@ -298,4 +302,26 @@
 
 .UploadButton1 {
   font-family: "AntiqueOlive";
+}
+
+.LeftMenuContainer {
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.LeftMenuContainer2 {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.LeftMenu2 {
+  padding: 5px;
+}
+
+.AlbumMenu2 {
+  justify-content: center;
+  text-align: center;
 }

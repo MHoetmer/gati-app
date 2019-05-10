@@ -16,10 +16,19 @@ class MenuBar1 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: [1, 2],
-      albums: ["Home", "Japan", "Georgië"],
-      thumbnails: ["useless", "/photos/georgie/1.jpg", "/photos/japan/1.jpg"]
+      thumbnails: []
     };
+  }
+
+  componentDidMount() {
+    fetch(`http://localhost:8000/api/thumbnails`, {
+      mode: "cors",
+      method: "GET"
+    })
+      .then(resp => {
+        return resp.json();
+      })
+      .then(data => this.setState({ thumbnails: data.data }));
   }
 
   changeStyleOne = () => {
@@ -38,51 +47,76 @@ class MenuBar1 extends React.Component {
   };
 
   render() {
+    console.log("thumbnails", this.state.thumbnails);
     return (
       <Router>
         <div className={"Body2"}>
-          <ul>
-            <Link className={"NavigationBar2"} onClick={this.changeStyleOne}>
-              Layout 1
-            </Link>
-
-            <Link className={"NavigationBar2"} onClick={this.changeStyleTwo}>
-              Layout 2
-            </Link>
-
-            <Link className={"NavigationBar2"} onClick={this.changeStyleThree}>
-              Layout 3
-            </Link>
-            <Link to="/logos" className={"NavigationBar2"}>
-              Logo's
-            </Link>
-            <Link to="/fonts " className={"NavigationBar2"}>
-              Fonts
-            </Link>
-            <Link to="/upload" className={"NavigationBar2"}>
-              Upload
-            </Link>
-            <a to="/" className={"Gatiway2"}>
-              Gatiway
-            </a>
-          </ul>
-
-          <Grid item>
-            <Grid container justify="center">
-              {this.state.images.map(i => {
-                return (
-                  <Link to={`/image/${i}`} className={"ImageLink2"}>
-                    <Grid key={i} item>
-                      <a>{this.state.albums[i]}</a>
-                    </Grid>
-                    <img
-                      src={process.env.PUBLIC_URL + this.state.thumbnails[i]}
-                      className="Thumbnail"
-                    />
-                  </Link>
-                );
-              })}
+          <Grid container className={"LeftMenuContainer2"}>
+            <Grid item md={12}>
+              <a to="/" className={"Gatiway2"}>
+                Gatiway
+              </a>
             </Grid>
+
+            <Grid item md={2} className={"LeftMenu2"}>
+              <Link className={"NavigationBar2"} onClick={this.changeStyleOne}>
+                Layout 1
+              </Link>
+            </Grid>
+
+            <Grid item md={2} className={"LeftMenu2"}>
+              <Link className={"NavigationBar2"} onClick={this.changeStyleTwo}>
+                Layout 2
+              </Link>
+            </Grid>
+            <Grid item md={2} className={"LeftMenu2"}>
+              <Link
+                className={"NavigationBar2"}
+                onClick={this.changeStyleThree}
+              >
+                Layout 3
+              </Link>
+            </Grid>
+            <Grid item md={2} className={"LeftMenu2"}>
+              <Link to="/logos" className={"NavigationBar2"}>
+                Logo's
+              </Link>
+            </Grid>
+            <Grid item md={2} className={"LeftMenu2"}>
+              <Link to="/fonts " className={"NavigationBar2"}>
+                Fonts
+              </Link>
+            </Grid>
+            <Grid item md={2} className={"LeftMenu2"}>
+              <Link to="/upload" className={"NavigationBar2"}>
+                Upload
+              </Link>
+            </Grid>
+          </Grid>
+          <br />
+          <Grid container>
+            {this.state.thumbnails.length > 0 ? (
+              this.state.thumbnails.map((v, k) => {
+                return (
+                  <Grid key={1} item md={12} className={"AlbumMenu2"}>
+                    <Link to={`/image/${k + 1}`}>
+                      <Grid key={1} item md={1} className={"ImageLink2"}>
+                        <a>{v.Album}</a>
+                      </Grid>
+
+                      <Grid key={2} item md={1}>
+                        <img
+                          src={process.env.PUBLIC_URL + v.Path}
+                          className="Thumbnail"
+                        />
+                      </Grid>
+                    </Link>
+                  </Grid>
+                );
+              })
+            ) : (
+              <a>Loading..</a>
+            )}
           </Grid>
 
           <Route path="/" exact component={Home2} />
