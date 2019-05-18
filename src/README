@@ -1,0 +1,7 @@
+menu1	style1
+menu2	-
+menu3	style3
+menu4	style1, style3
+
+
+Home of Style2 is set by a redux stored home variable

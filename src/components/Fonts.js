@@ -21,6 +21,10 @@ class Fonts extends React.Component {
         <br />
         <a style={{ fontFamily: "Clearface Std" }}>Clearface Std</a>
         <a style={{ fontFamily: "Apercu" }}>Apercu</a>
+        <br />
+        <a style={{ fontFamily: "Beatrice Display" }}>Beatrice Display</a>
+        <a style={{ fontFamily: "Sharp sans" }}>Sharp sans</a>
+        <a style={{ fontFamily: "Frauen" }}>Frauen</a>
       </div>
     );
   }

@@ -29,6 +29,21 @@
   src: url("./fonts/clearface-std/ClearfaceStd-Black.otf"); /* IE9 Compat Modes */
 }
 
+@font-face {
+  font-family: "Beatrice Display";
+  src: url("./fonts/Beatrice_Display/OTF/BeatriceDisplay-Bold.otf"); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: "Frauen";
+  src: url("./fonts/Frauen/ttf/Frauen-Roman.ttf"); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: "Sharp sans";
+  src: url("./fonts/Sharp_Sans/ttf/SharpSansDispNo2-Medium.ttf"); /* IE9 Compat Modes */
+}
+
 .Cursor {
   cursor: url("./logos/Plane.svg");
 }
@@ -71,7 +86,8 @@
 
 .NavigationBar1,
 .NavigationBar2,
-.NavigationBar3 {
+.NavigationBar3,
+.NavigationBar4 {
   padding-right: 20px;
   font-family: "Fedra Mono";
   color: white;
@@ -89,14 +105,23 @@
   font-family: "Clearface Std";
 }
 
+.NavigationBar4 {
+  color: black;
+  text-decoration: none;
+  font-family: "Sharp Sans";
+}
+
+.NavigationBar4:focus {
+  text-decoration: underline;
+}
+
 .NavigationBar1:hover {
   color: white;
   text-decoration: underline;
 }
 
 .NavigationBar2:hover {
-  color: #dcdddd;
-  text-decoration: underline;
+  background-color: rgb(170, 169, 169);
 }
 
 .NavigationBar3:hover {
@@ -104,9 +129,12 @@
 }
 
 .NavigationBar1:focus,
-.NavigationBar2:focus,
 .NavigationBar3:focus {
   text-decoration: underline;
+}
+
+.NavigationBar2:focus {
+  background-color: rgb(170, 169, 169);
 }
 
 .Gatiway1,
@@ -122,7 +150,17 @@
 }
 
 .Gatiway3 {
+  font-size: 40px;
+  margin-left: 25%;
   font-family: "Clearface Std";
+}
+
+.Gatiway4 {
+  font-family: "Beatrice Display";
+  color: black;
+  font-size: 30px;
+  text-align: right;
+  margin-right: 20px;
 }
 
 .ImageLink1,
@@ -144,11 +182,25 @@
   text-decoration: none;
 }
 
+.ImageLink2:hover {
+  background-color: white;
+}
+
+.ImageLink4 {
+  font-family: "Beatrice Display";
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+.ImageLink4:focus {
+  text-decoration: underline;
+}
+
 .ImageLink3 {
-  padding-right: 0px;
-  margin-left: -550px;
   font-family: "Apercu";
   color: #f3b2a5;
+  text-decoration: underline;
 }
 
 .ImageLink1:focus {
@@ -157,11 +209,11 @@
 }
 
 .ImageLink2:focus {
-  color: #e1ffd3;
+  background-color: white;
 }
 
 .ImageLink3:focus {
-  color: #f3b2a5;
+  color: rgb(253, 253, 237);
   text-decoration: underline;
 }
 
@@ -186,13 +238,32 @@
   font-size: 520%;
 }
 
+.ImageColLeft2 {
+  padding-left: 70%;
+  font-size: 52%;
+}
+
+.ImageColRight2 {
+  padding-right: 50%;
+
+  font-size: 52%;
+}
+
 .ImageTextCol {
   text-decoration: none;
   color: white;
 }
 
+.ImageTextCol2 {
+}
+
 .Image {
   height: 60vmin;
+}
+
+.Image2 {
+  height: 60vmin;
+  margin: 40px;
 }
 
 .ImageCol {
@@ -217,14 +288,52 @@
 .HomeRow {
   display: table;
 }
+.HomeRow5 {
+  padding-top: 100px;
+}
 
 .HomeColumn {
   margin-left: 1%;
   width: 25%;
 }
 
+.HomeColumn5 {
+  margin-left: 1%;
+  width: 25%;
+}
+
 .HomeImg {
   width: 40%;
+}
+
+.transparentHover {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  transform: translate(-20%, -50%);
+  font-size: 50px;
+  opacity: 0;
+  color: white;
+}
+.transparentContainer {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.transparentContainer:hover .transparentHover {
+  visibility: visible;
+  opacity: 1;
+}
+.transparentContainer:hover {
+  filter: grayscale(100%);
+}
+
+.HomeImg4 {
+  width: 90%;
+}
+.HomeImg4:hover {
+  color: white;
 }
 
 .HomeContainer {
@@ -266,6 +375,12 @@
   font-family: "Apercu";
 }
 
+.ImageComment4 {
+  font-size: 70%;
+  font-family: "Sharp sans";
+  color: black;
+}
+
 .Thumbnail {
   width: 25%;
   margin-top: 10px;
@@ -276,6 +391,10 @@
   width: 600%;
   margin-top: 4px;
   margin-left: 4px;
+}
+
+.Thumbnail5 {
+  width: 100%;
 }
 
 .MenuBarRow1 {
@@ -337,11 +456,133 @@
   text-align: center;
 }
 
-.LeftMenu2 {
+.LeftMenu2,
+.LeftMenu4 {
   padding: 5px;
+}
+.LeftMenu4 {
+  text-align: center;
 }
 
 .AlbumMenu2 {
   justify-content: center;
   text-align: center;
+}
+
+.slider4 {
+  height: 700px;
+  margin-left: 70px;
+}
+
+.slider {
+  height: 400px;
+}
+
+.Home2Container {
+  position: relative;
+  text-align: center;
+  color: white;
+  filter: grayscale(100%);
+}
+
+.Home2Container:hover {
+  filter: grayscale(0%);
+}
+
+.Home2Container:hover .Home2Text {
+  opacity: 0.7;
+}
+
+.Home2Text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-size: 50px;
+  opacity: 0;
+  color: white;
+}
+
+.Home2Text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-size: 50px;
+  opacity: 0;
+  color: white;
+}
+
+.container {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.containerVertical {
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.sliderVertical {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 100%;
+  white-space: nowrap;
+  margin-left: -60px;
+}
+
+.sticky {
+  color: rgb(243, 10, 10);
+  position: -webkit-sticky;
+  position: fixed;
+  top: 50px;
+  margin-left: 20px;
+  margin-top: 200px;
+  opacity: 0.8;
+  min-height: 100vh;
+  background-attachment: initial;
+}
+
+.stickyMenu {
+  color: rgb(255, 255, 255);
+  margin-left: 100px;
+  margin-top: 20px;
+  font-size: 30pt;
+  z-index: 3;
+  position: absolute;
+  opacity: 0.8;
+}
+
+.stickyMenuCol {
+  padding-left: 20px;
+}
+
+.HomeImage1 {
+  height: 200px;
+  margin: 20px;
+}
+
+.HomeImage3 {
+  height: 100px;
+  margin: 20px;
+  margin-left: -10px;
+}
+
+.container1 {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.container3 {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.ShiftedRow1 {
+}
+
+.ShiftedRow2 {
+  padding-left: 110px;
 }
